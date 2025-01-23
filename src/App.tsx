@@ -4,13 +4,9 @@ import { Download, Mail, Github, Linkedin, ExternalLink } from 'lucide-react';
 import axios from 'axios';
 import.meta.env.BASE_URL
 
-function App() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+const App = () => {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [submitStatus, setSubmitStatus] = useState('idle');
 
   const portfolioData = {
     name: "Dipak Khaire",
@@ -101,22 +97,16 @@ function App() {
           'Content-Type': 'application/json',
         },
       });
-   
-      console.log('Response:', response);
-   
-      if (response.status === 200) {
-        setSubmitStatus('success');
+
+      if (response.status !== 200) {
+        setSubmitStatus('error'); // You could use a new state to show an error
+        setFormData({ name: '', email: '', message: '' }); // Reset form fields
         setTimeout(() => {
           setSubmitStatus('idle');
         }, 3000);
       } else {
-        console.log('Error status:', response.status);
-        setFormData({ name: '', email: '', message: '' });
-      
-        // Display error message to the user (you can set this in state)
-        setSubmitStatus('error'); // You could use a new state to show an error
+        setSubmitStatus('success'); // Indicate success
       }
-      
     } catch (error) {
       console.error('Error caught:', error);
       if (axios.isAxiosError(error)) {
@@ -125,13 +115,15 @@ function App() {
       } else {
         console.error('General error:', error);
       }
-      
+
       setSubmitStatus('error');
+      setFormData({ name: '', email: '', message: '' }); // Reset form fields
       setTimeout(() => {
         setSubmitStatus('idle');
       }, 4000);
     }
-   };
+  };
+    
   return (
     <div className="min-h-screen bg-gradient-to-b from-sky-50 to-white">
       <div className="bg-gradient-to-r from-blue-400 via-blue-600 to-white text-white py-4">
@@ -253,7 +245,7 @@ function App() {
             <form onSubmit={handleSubmit} className="space-y-6">
               {submitStatus === 'success' && (
                 <div className="bg-green-50 text-green-800 p-4 rounded-md animate-fade-in">
-                  Message sent successfully!
+                  Message sent successfully!!!!
                 </div>
               )}
               {submitStatus === 'error' && (
