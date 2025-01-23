@@ -13,10 +13,23 @@ const App = () => {
     title: "App & Java Fullstack Developer",
     about: "I'm a web and app developer passionate about building various, user-friendly applications. I have created some projects using Java and Flutter. Currently, I'm focusing on improving my problem-solving abilities through Data Structures and Algorithms and diving into competitive programming/DP. With experience in web development (HTML, CSS, JavaScript, MySQL) and app development (Flutter, Firebase), I'm always learning new technologies. Check out my projects!",
     photo: "/assets/dk.jpg",
-    resumeUrl: "/assets/my_resume.pdf", // Add your resume URL here
+    resumeUrl: "/assets/m_resume.pdf", // Add your resume URL here
     email: "dipak.22310640@viit.ac.in",
     collegeName: "Student At VIIT, Pune",
     ph:"/assets/image.jpg",
+    activitiesPhoto:"/assets/image.jpg",
+
+
+    travelPhoto:'/assets/trivelling.jpg',
+    readingPhoto:"/assets/new.jpg ",
+    sportsPhoto:"/assets/sport.jpg ",
+    cookingPhoto:"/assets/swimming.jpg ",
+
+
+
+
+
+
     education: [
       {
         degree: "Artificial Intelligence and Data Science",
@@ -153,7 +166,9 @@ const App = () => {
               <h2 className="text-xl md:text-2xl mb-6 animate-slide-in-left animation-delay-200 font-bold text-green-600">{portfolioData.title}</h2>
               <p className="text-lg mb-8 animate-slide-in-left animation-delay-400 text-gray-600 font-bold">{portfolioData.about}</p>
               <div className="flex gap-4 animate-slide-in-left animation-delay-600">
-                <a href={ import.meta.env.BASE_URL + portfolioData.resumeUrl} download className="inline-flex items-center px-6 py-3 bg-white text-green-600 rounded-lg font-semibold hover:bg-green-50 transition-all hover:scale-105">
+                <a href={ import.meta.env.BASE_URL + portfolioData.resumeUrl} 
+                download 
+                className="inline-flex items-center px-6 py-3 bg-white text-green-600 rounded-lg font-semibold hover:bg-green-50 transition-all hover:scale-105">
                   <Download className="w-5 h-5 mr-2" /> Download Resume
                 </a>
               </div>
@@ -164,6 +179,48 @@ const App = () => {
           </div>
         </div>
       </div>
+      {/* activit */}
+      <div id="activities" className="bg-gradient-to-b from-green-300 to-transparent text-white">
+  <div className="container mx-auto px-4 py-10">
+    <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-green-500 animate-slide-in-left">
+      Activities & Interests
+    </h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="bg-white text-green-600 rounded-lg shadow-lg p-6 animate-slide-in-left animation-delay-200">
+        <img src={ import.meta.env.BASE_URL + portfolioData.travelPhoto} alt="Traveling" className="w-full h-40 object-cover rounded-lg mb-4" />
+        <h3 className="text-xl font-bold mb-2">Traveling</h3>
+        <p>Exploring new cultures and destinations</p>
+      </div>
+      {/* <div className="bg-white text-green-600 rounded-lg shadow-lg p-6 animate-slide-in-left animation-delay-400">
+        <img src={ import.meta.env.BASE_URL + portfolioData.photographyPhoto} alt="Photography" className="w-full h-40 object-cover rounded-lg mb-4" />
+        <h3 className="text-xl font-bold mb-2">Video Editing</h3>
+        <p>Capturing moments and landscapes</p>
+      </div> */}
+      <div className="bg-white text-green-600 rounded-lg shadow-lg p-6 animate-slide-in-left animation-delay-600">
+        <img src={ import.meta.env.BASE_URL + portfolioData.readingPhoto} alt="Reading" className="w-full h-40 object-cover rounded-lg mb-4" />
+        <h3 className="text-xl font-bold mb-2">Learning New Technology</h3>
+        <p> Moving towords the IT,AI world</p>
+      </div>
+      <div className="bg-white text-green-600 rounded-lg shadow-lg p-6 animate-slide-in-left animation-delay-800">
+        <img src={ import.meta.env.BASE_URL + portfolioData.sportsPhoto} alt="Sports" className="w-full h-40 object-cover rounded-lg mb-4" />
+        <h3 className="text-xl font-bold mb-2">Sports</h3>
+        <p>Playing and watching various sports, especially KHO-KHO and KABBADI</p>
+      </div>
+      <div className="bg-white text-green-600 rounded-lg shadow-lg p-6 animate-slide-in-left animation-delay-1000">
+        <img src={ import.meta.env.BASE_URL + portfolioData.cookingPhoto} alt="Cooking" className="w-full h-40 object-cover rounded-lg mb-4" />
+        <h3 className="text-xl font-bold mb-2">Swimming</h3>
+        <p>Enjoying the water and staying fit</p>
+      </div>
+      {/* <div className="bg-white text-green-600 rounded-lg shadow-lg p-6 animate-slide-in-left animation-delay-1200">
+        <img src={ import.meta.env.BASE_URL + portfolioData.technologyPhoto} alt="Technology" className="w-full h-40 object-cover rounded-lg mb-4" />
+        <h3 className="text-xl font-bold mb-2">Technology</h3>
+        <p>Keeping up with the latest tech trends and gadgets</p>
+      </div> */}
+    </div>
+  </div>
+</div>
+
+
 
       {/* Education Section */}
       <div id="education" className="bg-white text-blue-600 py-10">
