@@ -106,13 +106,14 @@ function App() {
    
       if (response.status === 200) {
         setSubmitStatus('success');
-        setFormData({ name: '', email: '', message: '' });
+       
    
         setTimeout(() => {
           setSubmitStatus('idle');
         }, 3000);
       } else {
         console.log('Error status:', response.status);
+        setFormData({ name: '', email: '', message: '' });
         throw new Error(' Message sent successfully!');
       }
     } catch (error) {
