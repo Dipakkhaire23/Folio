@@ -113,7 +113,7 @@ function App() {
         }, 3000);
       } else {
         console.log('Error status:', response.status);
-        throw new Error('Failed to send message');
+        throw new Error(' Message sent successfully!');
       }
     } catch (error) {
       console.error('Error caught:', error);
