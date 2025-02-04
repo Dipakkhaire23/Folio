@@ -9,9 +9,29 @@ const App = () => {
   const [submitStatus, setSubmitStatus] = useState('idle');
 
   const portfolioData = {
+    achievements: [
+      {
+        title: "Nirman Hackathon Top-6",
+        description: "Conducted By I2IC Training And Placement Cell VIIT",
+        date: "On 30 to 31 Jan 2025",
+        icon: "TrophyIcon",  // Replace with your icon (Trophy for Hackathon)
+        images: [
+          "public/assets/k.jpg",
+          "public/assets/n.jpg",
+          "public/assets/p.jpg",
+          "public/assets/Screenshot 2025-01-31 224635.png",
+          "public/assets/Screenshot 2025-01-31 224800.png",
+          "public/assets/Screenshot 2025-01-31 224830.png",
+          "public/assets/Screenshot 2025-01-31 224910.png",
+          "public/assets/Screenshot 2025-01-31 224951.png",
+          // Add more image URLs
+        ],
+      },
+     
+    ],
     name: "Dipak Khaire",
-    title: "App & Java Fullstack Developer",
-    about: "I'm a web and app developer passionate about building various, user-friendly applications. I have created some projects using Java and Flutter. Currently, I'm focusing on improving my problem-solving abilities through Data Structures and Algorithms and diving into competitive programming/DP. With experience in web development (HTML, CSS, JavaScript, MySQL) and app development (Flutter, Firebase), I'm always learning new technologies. Check out my projects!",
+    title: "APP && JAVA FULLSTACK DEVLOPER",
+    about: "I Am Dipak, a passionate and skilled developer with expertise in Flutter for mobile and web development, along with Spring Boot for backend services. With strong problem-solving abilities, I have successfully built and deployed various projects on GitHub and Vercel. Check out my projects!",
     photo: "/assets/dk.jpg",
     resumeUrl: "/assets/m_resume.pdf", // Add your resume URL here
     email: "dipak.22310640@viit.ac.in",
@@ -51,7 +71,7 @@ const App = () => {
       { name: "Rest API" },
       { name: "C++" },
       { name: "DSA" },
-      { name: "SQL" },
+      { name: "Spring MVC" },
       { name: "Backend Development" },
       { name: "App Development" },
     ],
@@ -60,9 +80,10 @@ const App = () => {
         position: "Developer Team",
         company: "Researchers And Innovators Cell At VIIT",
         responsibilities: [
-          "Developed web applications using JavaScript, HTML, and CSS.",
-          "Built mobile applications using Flutter and integrated Firebase.",
-          "Collaborated with a team to implement user authentication and database management systems."
+          "Skill",
+          "HTML,CSS ,JS,React.",
+          "Spring Boot 3 for Backend Services.",
+          "MySQL,Firebase"
         ],
       },
       {
@@ -88,6 +109,11 @@ const App = () => {
         title: "Notes Application",
         description: "The Daily Notes App is a mobile application designed for users to easily create, manage, and organize their notes on a daily basis. Users can add, update, delete, and view their notes with the ability to organize them based on dates or categories. The app allows users to securely log in and access their notes across devices with real-time syncing, powered by Firebase.",
         link: "https://github.com/Dipakkhaire23/Notes-appliction.git"
+      },
+      {
+        title: "Educonnect",
+        description: "Teacher’s Dashboard: Effortlessly upload assignments, manage grades, organize online classrooms, create CIE tests, track submissions, and more.Student’s Dashboard: Submit assignments, access grades, attend CIE tests, check timetables, and track academic progress .The Tech Behind the Magic: Frontend: React & Tailwind CSS for a sleek, responsive design Backend: Spring Boot 3, Spring MVC, and Spring JPA for scalable and efficient performance Authentication: JWT & OAuth 2 for secure and seamless user authentication Database: MySQL for reliable data storage",
+        link: "https://github.com/Dipakkhaire23/Edutech.git"
       }
     ]
   };
@@ -257,20 +283,67 @@ const App = () => {
       </div>
 
       {/* Projects Section */}
-      <div id="projects" className="container mx-auto px-4 py-20">
-        <h2 className="text-3xl font-bold mb-12 text-center text-sky-900 animate-fade-in">Latest Projects</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {portfolioData.projects.map((project, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-fade-in-up" style={{ animationDelay: `${index * 200}ms` }}>
-              <h3 className="text-xl font-semibold mb-3 text-sky-800">{project.title}</h3>
-              <p className="text-gray-600 mb-4">{project.description}</p>
-              <a href={project.link} className="inline-flex items-center text-sky-600 hover:text-sky-700 transition-colors">
-                View Project <ExternalLink className="w-4 h-4 ml-2" />
-              </a>
-            </div>
-          ))}
+      <div id="projects" className="bg-gradient-to-b from-blue-500 to-transparent py-20 text-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-black-500 animate-slide-in-left">
+            Projects
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {portfolioData.projects.map((project, index) => (
+              <div key={index} className="bg-white text-green-600 rounded-lg shadow-lg p-6 animate-slide-in-left animation-delay-200">
+                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                <p className="mb-4">{project.description}</p>
+                <a href={project.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-all">
+                  <ExternalLink className="w-5 h-5 mr-2" /> View Project
+                </a>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
+
+{/* Achievements Section */}
+<div id="achievements" className="bg-gradient-to-b from-blue-600 to-transparent py-20 text-white">
+  <div className="container mx-auto px-4">
+    <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-white animate-slide-in-left">
+      Achievements
+    </h2>
+    
+    {/* Single Achievement (Full Width) */}
+    <div className="bg-white text-blue-600 rounded-lg shadow-lg p-6 mx-auto w-full max-w-4xl animate-slide-in-left animation-delay-200">
+      <div className="flex items-center gap-6 mb-6">
+        <div className="w-16 h-16 rounded-full bg-blue-200 text-white flex items-center justify-center">
+          {/* <achievement.icon className="w-8 h-8" /> */}
+        </div>
+        <div>
+          <h3 className="text-2xl font-bold">{portfolioData.achievements[0].title}</h3>
+          <p className="text-gray-600 mt-2">{portfolioData.achievements[0].description}</p>
+          <p className="text-sm text-gray-400 mt-1">{portfolioData.achievements[0].date}</p>
+        </div>
+      </div>
+
+      {/* Hackathon Achievement with Images */}
+      {portfolioData.achievements[0].title === "Nirman Hackathon Top-6" && (
+        <div className="mt-4">
+          <h4 className="text-lg font-semibold mb-4">Event Photos</h4>
+          <div className="flex gap-4 overflow-x-scroll">
+            {portfolioData.achievements[0].images.map((image, index) => (
+              <img
+                key={index}
+                src={image}
+                alt={`hackathon-image-${index}`}
+                className="w-72 h-72 object-cover rounded-lg shadow-md"
+              />
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  </div>
+</div>
+
+
+
 
       {/* Experience Section */}
       <div id="experience" className="bg-white text-blue-600 py-10">
@@ -293,78 +366,116 @@ const App = () => {
           </div>
         </div>
       </div>
+{/* Contact Section */}
+<div id="contact" className="bg-gradient-to-b from-sky-50 to-sky-100 py-20">
+  <div className="container mx-auto px-4">
+    <h2 className="text-3xl font-bold mb-12 text-center text-sky-900 animate-fade-in transition-all duration-500 hover:text-sky-700">
+      Get In Touch With Me
+    </h2>
+    
+    <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-xl p-8 transform hover:scale-105 transition-transform duration-500">
+      <form onSubmit={handleSubmit} className="space-y-8">
+        
+        {/* Success/Error Message */}
+        {submitStatus === 'error' && (
+          <div className="bg-green-50 text-green-800 p-4 rounded-md animate-fade-in">
+            Message sent successfully!
+          </div>
+        )}
+        {submitStatus === 'success' && (
+          // <div className="bg-red-50 text-red-800 p-4 rounded-md animate-fade-in">
+          //   Oops! Something went wrong. Try again.
+          // </div>
+          <div className="bg-green-50 text-green-800 p-4 rounded-md animate-fade-in">
+            Message sent successfully!
+          </div>
+        )}
 
-      {/* Contact Section */}
-      <div id="contact" className="bg-gradient-to-b from-sky-50 to-sky-100">
-        <div className="container mx-auto px-4 py-20">
-          <h2 className="text-3xl font-bold mb-12 text-center text-sky-900 animate-fade-in">Get In Touch With Me</h2>
-          <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-8 animate-fade-in-up">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {submitStatus === 'success' && (
-                <div className="bg-green-50 text-green-800 p-4 rounded-md animate-fade-in">
-                  Message sent successfully!!!!
-                </div>
-              )}
-              {submitStatus === 'error' && (
-                 <div className="bg-green-50 text-green-800 p-4 rounded-md animate-fade-in">
-                 Message sent successfully!
-               </div>
-              )}
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-sky-700">Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  required
-                  className="mt-1 block w-full rounded-md border-sky-300 shadow-sm focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50 transition-all"
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-sky-700">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  required
-                  className="mt-1 block w-full rounded-md border-sky-300 shadow-sm focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50 transition-all"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-sky-700">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  required
-                  className="mt-1 block w-full rounded-md border-sky-300 shadow-sm focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50 transition-all"
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                disabled={submitStatus === 'loading'}
-                className={`w-full bg-sky-600 text-white py-3 px-6 rounded-lg font-semibold transition-all hover:bg-sky-700 hover:scale-[1.02] ${submitStatus === 'loading' ? 'opacity-75 cursor-not-allowed' : 'hover:shadow-lg'}`}
-              >
-                {submitStatus === 'loading' ? 'Sending...' : 'Send Message'}
-              </button>
-            </form>
-            <div className="mt-8 flex justify-center space-x-6">
-              <a href="https://github.com/dipakkhaire23" className="text-sky-600 hover:text-sky-700 transition-colors hover:scale-110 transform duration-200">
-                <Github className="w-6 h-6" />
-              </a>
-              <a href="https://www.linkedin.com/in/dipak-khaire-1a4227291?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" className="text-sky-600 hover:text-sky-700 transition-colors hover:scale-110 transform duration-200">
-                <Linkedin className="w-6 h-6" />
-              </a>
-            </div>
+        {/* Name Field */}
+        <div className="relative">
+          <label htmlFor="name" className="block text-sm font-medium text-sky-700">Name</label>
+          <div className="mt-1 relative">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleInputChange}
+              required
+              className="w-full p-4 pl-10 rounded-md border-sky-300 shadow-sm focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50 transition-all"
+            />
+            <svg xmlns="http://www.w3.org/2000/svg" className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 3l-7 7-7-7" />
+            </svg>
           </div>
         </div>
+
+        {/* Email Field */}
+        <div className="relative">
+          <label htmlFor="email" className="block text-sm font-medium text-sky-700">Email</label>
+          <div className="mt-1 relative">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
+              required
+              className="w-full p-4 pl-10 rounded-md border-sky-300 shadow-sm focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50 transition-all"
+            />
+            <svg xmlns="http://www.w3.org/2000/svg" className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 9l4 4-4 4M21 9l-4 4 4 4" />
+            </svg>
+          </div>
+        </div>
+
+        {/* Message Field */}
+        <div className="relative">
+          <label htmlFor="message" className="block text-sm font-medium text-sky-700">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows={4}
+            value={formData.message}
+            onChange={handleInputChange}
+            required
+            className="mt-1 block w-full p-4 rounded-md border-sky-300 shadow-sm focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50 transition-all"
+          ></textarea>
+        </div>
+
+        {/* Submit Button */}
+        <button
+          type="submit"
+          disabled={submitStatus === 'loading'}
+          className={`w-full bg-sky-600 text-white py-3 px-6 rounded-lg font-semibold transition-all hover:bg-sky-700 hover:scale-[1.05] ${submitStatus === 'loading' ? 'opacity-75 cursor-not-allowed' : 'hover:shadow-lg'}`}
+        >
+          {submitStatus === 'loading' ? 'Sending...' : 'Send Message'}
+        </button>
+      </form>
+
+      {/* Social Media Links */}
+      <div className="mt-8 flex justify-center space-x-6">
+        <a
+          href="https://github.com/dipakkhaire23"
+          className="text-sky-600 hover:text-sky-700 transition-all transform hover:scale-110 duration-300"
+        >
+          <Github className="w-8 h-8" />
+        </a>
+        <a
+          href="https://linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=dipak-khaire-1a4227291"
+          className="text-sky-600 hover:text-sky-700 transition-all transform hover:scale-110 duration-300"
+        >
+          <Linkedin className="w-8 h-8" />
+        </a>
       </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
     </div>
   );
 }
