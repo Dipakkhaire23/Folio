@@ -16,14 +16,14 @@ const App = () => {
         date: "On 30 to 31 Jan 2025",
         icon: "TrophyIcon",  // Replace with your icon (Trophy for Hackathon)
         images: [
-          "public/assets/k.jpg",
-          "public/assets/n.jpg",
-          "public/assets/p.jpg",
-          "public/assets/Screenshot 2025-01-31 224635.png",
-          "public/assets/Screenshot 2025-01-31 224800.png",
-          "public/assets/Screenshot 2025-01-31 224830.png",
-          "public/assets/Screenshot 2025-01-31 224910.png",
-          "public/assets/Screenshot 2025-01-31 224951.png",
+          "/assets/k.jpg",
+          "/assets/n.jpg",
+          "/assets/p.jpg",
+          "/assets/Screenshot 2025-01-31 224635.png",
+          "/assets/Screenshot 2025-01-31 224800.png",
+          "/assets/Screenshot 2025-01-31 224830.png",
+          "/assets/Screenshot 2025-01-31 224910.png",
+          "/assets/Screenshot 2025-01-31 224951.png",
           // Add more image URLs
         ],
       },
@@ -327,10 +327,10 @@ const App = () => {
         <div className="mt-4">
           <h4 className="text-lg font-semibold mb-4">Event Photos</h4>
           <div className="flex gap-4 overflow-x-scroll">
-            {portfolioData.achievements[0].images.map((image, index) => (
+            { portfolioData.achievements[0].images.map((image, index) => (
               <img
                 key={index}
-                src={image}
+                src={ import.meta.env.BASE_URL +image}
                 alt={`hackathon-image-${index}`}
                 className="w-72 h-72 object-cover rounded-lg shadow-md"
               />
