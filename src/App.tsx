@@ -14,7 +14,7 @@ const App = () => {
         title: "Nirman Hackathon Top-6",
         description: "Conducted By I2IC Training And Placement Cell VIIT",
         date: "On 30 to 31 Jan 2025",
-        icon: "TrophyIcon",  // Replace with your icon (Trophy for Hackathon)
+        icon: "TrophyIcon",  // Replace with your icon (Trophy 
         images: [
           "/assets/k.jpg",
           "/assets/n.jpg",
@@ -35,7 +35,7 @@ const App = () => {
     photo: "/assets/dk.jpg",
     resumeUrl: "/assets/m_resume.pdf", // Add your resume URL here
     email: "dipak.22310640@viit.ac.in",
-    collegeName: "Student At VIIT, Pune",
+    collegeName: "Student At VIIT,Pune",
     ph:"/assets/image.jpg",
     activitiesPhoto:"/assets/image.jpg",
 
@@ -165,81 +165,81 @@ const App = () => {
     
   return (
     <div className="min-h-screen bg-gradient-to-b from-sky-50 to-white">
-      <div className="bg-gradient-to-r from-blue-400 via-blue-600 to-white text-white py-4">
-        <div className="container mx-auto px-4 flex items-center justify-between">
-          <h1 className="text-xl md:text-2xl font-semibold text-center md:text-left">{portfolioData.collegeName}</h1>
+      <div className="py-4 text-white bg-gradient-to-r from-blue-400 via-blue-600 to-white">
+        <div className="container flex items-center justify-between px-4 mx-auto">
+          <h1 className="text-xl font-semibold text-center md:text-2xl md:text-left">{portfolioData.collegeName}</h1>
           <div className="flex gap-10 ml-auto">
-            <a href="#home" className="text-lg md:text-xl font-semibold text-black hover:text-gray-700 transition-all">Home</a>
-            <a href="#projects" className="text-lg md:text-xl font-semibold text-black hover:text-gray-700 transition-all">Projects</a>
-            <a href="#contact" className="text-lg md:text-xl font-semibold text-black hover:text-gray-700 transition-all">Connect Me</a>
+            <a href="#home" className="text-lg font-semibold text-black transition-all md:text-xl hover:text-gray-700">Home</a>
+            <a href="#projects" className="text-lg font-semibold text-black transition-all md:text-xl hover:text-gray-700">Projects</a>
+            <a href="#contact" className="text-lg font-semibold text-black transition-all md:text-xl hover:text-gray-700">Connect Me</a>
           </div>
         </div>
       </div>
 
       {/* Home Section */}
-      <div id="home" className="bg-gradient-to-b from-blue-300 to-transparent text-white">
-        <div className="container mx-auto px-4 py-10">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+      <div id="home" className="text-white bg-gradient-to-b from-blue-300 to-transparent">
+        <div className="container px-4 py-10 mx-auto">
+          <div className="flex flex-col items-center justify-between gap-12 md:flex-row">
             <div className="flex-1 animate-fade-in-up">
               <div className="flex items-center gap-20">
-                <h1 className="text-3xl md:text-4xl font-semibold mb-2 text-blue-500 animate-slide-in-left">
+                <h1 className="mb-2 text-3xl font-semibold text-blue-500 md:text-4xl animate-slide-in-left">
                   {portfolioData.name}
                 </h1>
-                <a href={`mailto:${portfolioData.email}`} className="inline-flex items-center px-6 py-3 bg-transparent border-2 border-white rounded-lg font-semibold hover:bg-white hover:text-green-600 transition-all hover:scale-105">
+                <a href={`mailto:${portfolioData.email}`} className="inline-flex items-center px-6 py-3 font-semibold transition-all bg-transparent border-2 border-white rounded-lg hover:bg-white hover:text-green-600 hover:scale-105">
                   <Mail className="w-5 h-5 mr-2" /> Hire Me
                 </a>
               </div>
-              <h2 className="text-xl md:text-2xl mb-6 animate-slide-in-left animation-delay-200 font-bold text-green-600">{portfolioData.title}</h2>
-              <p className="text-lg mb-8 animate-slide-in-left animation-delay-400 text-gray-600 font-bold">{portfolioData.about}</p>
+              <h2 className="mb-6 text-xl font-bold text-green-600 md:text-2xl animate-slide-in-left animation-delay-200">{portfolioData.title}</h2>
+              <p className="mb-8 text-lg font-bold text-gray-600 animate-slide-in-left animation-delay-400">{portfolioData.about}</p>
               <div className="flex gap-4 animate-slide-in-left animation-delay-600">
                 <a href={ import.meta.env.BASE_URL + portfolioData.resumeUrl} 
                 download 
-                className="inline-flex items-center px-6 py-3 bg-white text-green-600 rounded-lg font-semibold hover:bg-green-50 transition-all hover:scale-105">
+                className="inline-flex items-center px-6 py-3 font-semibold text-green-600 transition-all bg-white rounded-lg hover:bg-green-50 hover:scale-105">
                   <Download className="w-5 h-5 mr-2" /> Download Resume
                 </a>
               </div>
             </div>
             <div className="flex-shrink-0 animate-fade-in">
-              <img src={  import.meta.env.BASE_URL + portfolioData.photo} alt={portfolioData.name} className="w-48 h-80 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" />
+              <img src={  import.meta.env.BASE_URL + portfolioData.photo} alt={portfolioData.name} className="object-cover w-48 transition-transform duration-300 rounded-lg shadow-lg h-80 hover:scale-105" />
             </div>
           </div>
         </div>
       </div>
       {/* activit */}
-      <div id="activities" className="bg-gradient-to-b from-green-300 to-transparent text-white">
-  <div className="container mx-auto px-4 py-10">
-    <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-green-500 animate-slide-in-left">
+      <div id="activities" className="text-white bg-gradient-to-b from-green-300 to-transparent">
+  <div className="container px-4 py-10 mx-auto">
+    <h2 className="mb-6 text-3xl font-semibold text-green-500 md:text-4xl animate-slide-in-left">
       Activities & Interests
     </h2>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div className="bg-white text-green-600 rounded-lg shadow-lg p-6 animate-slide-in-left animation-delay-200">
-        <img src={ import.meta.env.BASE_URL + portfolioData.travelPhoto} alt="Traveling" className="w-full h-40 object-cover rounded-lg mb-4" />
-        <h3 className="text-xl font-bold mb-2">Traveling</h3>
+    <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="p-6 text-green-600 bg-white rounded-lg shadow-lg animate-slide-in-left animation-delay-200">
+        <img src={ import.meta.env.BASE_URL + portfolioData.travelPhoto} alt="Traveling" className="object-cover w-full h-40 mb-4 rounded-lg" />
+        <h3 className="mb-2 text-xl font-bold">Traveling</h3>
         <p>Exploring new cultures and destinations</p>
       </div>
-      {/* <div className="bg-white text-green-600 rounded-lg shadow-lg p-6 animate-slide-in-left animation-delay-400">
-        <img src={ import.meta.env.BASE_URL + portfolioData.photographyPhoto} alt="Photography" className="w-full h-40 object-cover rounded-lg mb-4" />
-        <h3 className="text-xl font-bold mb-2">Video Editing</h3>
+      {/* <div className="p-6 text-green-600 bg-white rounded-lg shadow-lg animate-slide-in-left animation-delay-400">
+        <img src={ import.meta.env.BASE_URL + portfolioData.photographyPhoto} alt="Photography" className="object-cover w-full h-40 mb-4 rounded-lg" />
+        <h3 className="mb-2 text-xl font-bold">Video Editing</h3>
         <p>Capturing moments and landscapes</p>
       </div> */}
-      <div className="bg-white text-green-600 rounded-lg shadow-lg p-6 animate-slide-in-left animation-delay-600">
-        <img src={ import.meta.env.BASE_URL + portfolioData.readingPhoto} alt="Reading" className="w-full h-40 object-cover rounded-lg mb-4" />
-        <h3 className="text-xl font-bold mb-2">Learning New Technology</h3>
+      <div className="p-6 text-green-600 bg-white rounded-lg shadow-lg animate-slide-in-left animation-delay-600">
+        <img src={ import.meta.env.BASE_URL + portfolioData.readingPhoto} alt="Reading" className="object-cover w-full h-40 mb-4 rounded-lg" />
+        <h3 className="mb-2 text-xl font-bold">Learning New Technology</h3>
         <p> Moving towords the IT,AI world</p>
       </div>
-      <div className="bg-white text-green-600 rounded-lg shadow-lg p-6 animate-slide-in-left animation-delay-800">
-        <img src={ import.meta.env.BASE_URL + portfolioData.sportsPhoto} alt="Sports" className="w-full h-40 object-cover rounded-lg mb-4" />
-        <h3 className="text-xl font-bold mb-2">Sports</h3>
+      <div className="p-6 text-green-600 bg-white rounded-lg shadow-lg animate-slide-in-left animation-delay-800">
+        <img src={ import.meta.env.BASE_URL + portfolioData.sportsPhoto} alt="Sports" className="object-cover w-full h-40 mb-4 rounded-lg" />
+        <h3 className="mb-2 text-xl font-bold">Sports</h3>
         <p>Playing and watching various sports, especially KHO-KHO and KABBADI</p>
       </div>
-      <div className="bg-white text-green-600 rounded-lg shadow-lg p-6 animate-slide-in-left animation-delay-1000">
-        <img src={ import.meta.env.BASE_URL + portfolioData.cookingPhoto} alt="Cooking" className="w-full h-40 object-cover rounded-lg mb-4" />
-        <h3 className="text-xl font-bold mb-2">Swimming</h3>
+      <div className="p-6 text-green-600 bg-white rounded-lg shadow-lg animate-slide-in-left animation-delay-1000">
+        <img src={ import.meta.env.BASE_URL + portfolioData.cookingPhoto} alt="Cooking" className="object-cover w-full h-40 mb-4 rounded-lg" />
+        <h3 className="mb-2 text-xl font-bold">Swimming</h3>
         <p>Enjoying the water and staying fit</p>
       </div>
-      {/* <div className="bg-white text-green-600 rounded-lg shadow-lg p-6 animate-slide-in-left animation-delay-1200">
-        <img src={ import.meta.env.BASE_URL + portfolioData.technologyPhoto} alt="Technology" className="w-full h-40 object-cover rounded-lg mb-4" />
-        <h3 className="text-xl font-bold mb-2">Technology</h3>
+      {/* <div className="p-6 text-green-600 bg-white rounded-lg shadow-lg animate-slide-in-left animation-delay-1200">
+        <img src={ import.meta.env.BASE_URL + portfolioData.technologyPhoto} alt="Technology" className="object-cover w-full h-40 mb-4 rounded-lg" />
+        <h3 className="mb-2 text-xl font-bold">Technology</h3>
         <p>Keeping up with the latest tech trends and gadgets</p>
       </div> */}
     </div>
@@ -249,16 +249,16 @@ const App = () => {
 
 
       {/* Education Section */}
-      <div id="education" className="bg-white text-blue-600 py-10">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-left animate-slide-in-left text-blue-800">Education</h2>
+      <div id="education" className="py-10 text-blue-600 bg-white">
+        <div className="container px-4 mx-auto">
+          <h2 className="mb-8 text-2xl font-bold text-left text-blue-800 md:text-3xl animate-slide-in-left">Education</h2>
           <div className="space-y-8">
             {portfolioData.education.map((edu, index) => (
-              <div key={index} className="flex flex-col md:flex-row items-center justify-between bg-blue-50 p-6 rounded-lg shadow-lg hover:bg-blue-100 transition-all duration-300 animate-fade-in-up">
+              <div key={index} className="flex flex-col items-center justify-between p-6 transition-all duration-300 rounded-lg shadow-lg md:flex-row bg-blue-50 hover:bg-blue-100 animate-fade-in-up">
                 <div className="flex-1">
-                  <h3 className="text-2xl font-semibold text-blue-800 mb-2">{edu.degree}</h3>
-                  <p className="text-lg font-medium text-blue-500 mb-1">{edu.school}</p>
-                  <p className="text-lg text-blue-500 mb-2">{edu.graduationYear}</p>
+                  <h3 className="mb-2 text-2xl font-semibold text-blue-800">{edu.degree}</h3>
+                  <p className="mb-1 text-lg font-medium text-blue-500">{edu.school}</p>
+                  <p className="mb-2 text-lg text-blue-500">{edu.graduationYear}</p>
                 </div>
               </div>
             ))}
@@ -267,13 +267,13 @@ const App = () => {
       </div>
 
       {/* Skills Section */}
-      <div id="skills" className="bg-gradient-to-b from-blue-300 to-transparent text-white bg-cover bg-center relative rounded-lg" style={ {backgroundImage: 'url(assets/image.jpg)' }}>
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-left animate-slide-in-left text-white-800">Skills</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div id="skills" className="relative text-white bg-center bg-cover rounded-lg bg-gradient-to-b from-blue-300 to-transparent" style={ {backgroundImage: 'url(assets/image.jpg)' }}>
+        <div className="container px-4 mx-auto">
+          <h2 className="mb-8 text-2xl font-bold text-left md:text-3xl animate-slide-in-left text-white-800">Skills</h2>
+          <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
             {portfolioData.skills.map((skill, index) => (
               <div key={index} className="flex flex-col items-center justify-center animate-fade-in-up">
-                <div className="w-full bg-white border-2 border-blue-600 text-center text-blue-600 font-semibold py-4 px-6 rounded-md shadow-md hover:bg-blue-600 hover:text-white transition-all duration-300">
+                <div className="w-full px-6 py-4 font-semibold text-center text-blue-600 transition-all duration-300 bg-white border-2 border-blue-600 rounded-md shadow-md hover:bg-blue-600 hover:text-white">
                   {skill.name}
                 </div>
               </div>
@@ -283,17 +283,17 @@ const App = () => {
       </div>
 
       {/* Projects Section */}
-      <div id="projects" className="bg-gradient-to-b from-blue-500 to-transparent py-20 text-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-black-500 animate-slide-in-left">
+      <div id="projects" className="py-20 text-white bg-gradient-to-b from-blue-500 to-transparent">
+        <div className="container px-4 mx-auto">
+          <h2 className="mb-6 text-3xl font-semibold md:text-4xl text-black-500 animate-slide-in-left">
             Projects
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             {portfolioData.projects.map((project, index) => (
-              <div key={index} className="bg-white text-green-600 rounded-lg shadow-lg p-6 animate-slide-in-left animation-delay-200">
-                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+              <div key={index} className="p-6 text-green-600 bg-white rounded-lg shadow-lg animate-slide-in-left animation-delay-200">
+                <h3 className="mb-2 text-xl font-bold">{project.title}</h3>
                 <p className="mb-4">{project.description}</p>
-                <a href={project.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-all">
+                <a href={project.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 font-semibold text-white transition-all bg-blue-600 rounded-lg hover:bg-blue-500">
                   <ExternalLink className="w-5 h-5 mr-2" /> View Project
                 </a>
               </div>
@@ -303,36 +303,36 @@ const App = () => {
       </div>
 
 {/* Achievements Section */}
-<div id="achievements" className="bg-gradient-to-b from-blue-600 to-transparent py-20 text-white">
-  <div className="container mx-auto px-4">
-    <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-white animate-slide-in-left">
+<div id="achievements" className="py-20 text-white bg-gradient-to-b from-blue-600 to-transparent">
+  <div className="container px-4 mx-auto">
+    <h2 className="mb-6 text-3xl font-semibold text-white md:text-4xl animate-slide-in-left">
       Achievements
     </h2>
     
     {/* Single Achievement (Full Width) */}
-    <div className="bg-white text-blue-600 rounded-lg shadow-lg p-6 mx-auto w-full max-w-4xl animate-slide-in-left animation-delay-200">
+    <div className="w-full max-w-4xl p-6 mx-auto text-blue-600 bg-white rounded-lg shadow-lg animate-slide-in-left animation-delay-200">
       <div className="flex items-center gap-6 mb-6">
-        <div className="w-16 h-16 rounded-full bg-blue-200 text-white flex items-center justify-center">
+        <div className="flex items-center justify-center w-16 h-16 text-white bg-blue-200 rounded-full">
           {/* <achievement.icon className="w-8 h-8" /> */}
         </div>
         <div>
           <h3 className="text-2xl font-bold">{portfolioData.achievements[0].title}</h3>
-          <p className="text-gray-600 mt-2">{portfolioData.achievements[0].description}</p>
-          <p className="text-sm text-gray-400 mt-1">{portfolioData.achievements[0].date}</p>
+          <p className="mt-2 text-gray-600">{portfolioData.achievements[0].description}</p>
+          <p className="mt-1 text-sm text-gray-400">{portfolioData.achievements[0].date}</p>
         </div>
       </div>
 
       {/* Hackathon Achievement with Images */}
       {portfolioData.achievements[0].title === "Nirman Hackathon Top-6" && (
         <div className="mt-4">
-          <h4 className="text-lg font-semibold mb-4">Event Photos</h4>
+          <h4 className="mb-4 text-lg font-semibold">Event Photos</h4>
           <div className="flex gap-4 overflow-x-scroll">
             { portfolioData.achievements[0].images.map((image, index) => (
               <img
                 key={index}
                 src={ import.meta.env.BASE_URL +image}
                 alt={`hackathon-image-${index}`}
-                className="w-72 h-72 object-cover rounded-lg shadow-md"
+                className="object-cover rounded-lg shadow-md w-72 h-72"
               />
             ))}
           </div>
@@ -346,15 +346,15 @@ const App = () => {
 
 
       {/* Experience Section */}
-      <div id="experience" className="bg-white text-blue-600 py-10">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-left animate-slide-in-left text-blue-800">Experience</h2>
+      <div id="experience" className="py-10 text-blue-600 bg-white">
+        <div className="container px-4 mx-auto">
+          <h2 className="mb-8 text-2xl font-bold text-left text-blue-800 md:text-3xl animate-slide-in-left">Experience</h2>
           <div className="space-y-8">
             {portfolioData.experience.map((exp, index) => (
-              <div key={index} className="flex flex-col md:flex-row items-center justify-between bg-blue-50 p-6 rounded-lg shadow-lg hover:bg-blue-100 transition-all duration-300 animate-fade-in-up">
+              <div key={index} className="flex flex-col items-center justify-between p-6 transition-all duration-300 rounded-lg shadow-lg md:flex-row bg-blue-50 hover:bg-blue-100 animate-fade-in-up">
                 <div className="flex-1">
-                  <h3 className="text-2xl font-semibold text-blue-800 mb-2">{exp.position}</h3>
-                  <p className="text-lg font-medium text-blue-500 mb-1">{exp.company}</p>
+                  <h3 className="mb-2 text-2xl font-semibold text-blue-800">{exp.position}</h3>
+                  <p className="mb-1 text-lg font-medium text-blue-500">{exp.company}</p>
                   <ul className="mt-4 space-y-2">
                     {exp.responsibilities.map((task, taskIndex) => (
                       <li key={taskIndex} className="text-lg text-blue-600">- {task}</li>
@@ -367,26 +367,26 @@ const App = () => {
         </div>
       </div>
 {/* Contact Section */}
-<div id="contact" className="bg-gradient-to-b from-sky-50 to-sky-100 py-20">
-  <div className="container mx-auto px-4">
-    <h2 className="text-3xl font-bold mb-12 text-center text-sky-900 animate-fade-in transition-all duration-500 hover:text-sky-700">
+<div id="contact" className="py-20 bg-gradient-to-b from-sky-50 to-sky-100">
+  <div className="container px-4 mx-auto">
+    <h2 className="mb-12 text-3xl font-bold text-center transition-all duration-500 text-sky-900 animate-fade-in hover:text-sky-700">
       Get In Touch With Me
     </h2>
     
-    <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-xl p-8 transform hover:scale-105 transition-transform duration-500">
+    <div className="max-w-3xl p-8 mx-auto transition-transform duration-500 transform bg-white rounded-lg shadow-xl hover:scale-105">
       <form onSubmit={handleSubmit} className="space-y-8">
         
         {/* Success/Error Message */}
         {submitStatus === 'error' && (
-          <div className="bg-green-50 text-green-800 p-4 rounded-md animate-fade-in">
+          <div className="p-4 text-green-800 rounded-md bg-green-50 animate-fade-in">
             Message sent successfully!
           </div>
         )}
         {submitStatus === 'success' && (
-          // <div className="bg-red-50 text-red-800 p-4 rounded-md animate-fade-in">
+          // <div className="p-4 text-red-800 rounded-md bg-red-50 animate-fade-in">
           //   Oops! Something went wrong. Try again.
           // </div>
-          <div className="bg-green-50 text-green-800 p-4 rounded-md animate-fade-in">
+          <div className="p-4 text-green-800 rounded-md bg-green-50 animate-fade-in">
             Message sent successfully!
           </div>
         )}
@@ -394,7 +394,7 @@ const App = () => {
         {/* Name Field */}
         <div className="relative">
           <label htmlFor="name" className="block text-sm font-medium text-sky-700">Name</label>
-          <div className="mt-1 relative">
+          <div className="relative mt-1">
             <input
               type="text"
               id="name"
@@ -402,9 +402,9 @@ const App = () => {
               value={formData.name}
               onChange={handleInputChange}
               required
-              className="w-full p-4 pl-10 rounded-md border-sky-300 shadow-sm focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50 transition-all"
+              className="w-full p-4 pl-10 transition-all rounded-md shadow-sm border-sky-300 focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50"
             />
-            <svg xmlns="http://www.w3.org/2000/svg" className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="absolute w-5 h-5 transform -translate-y-1/2 left-3 top-1/2 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 3l-7 7-7-7" />
             </svg>
           </div>
@@ -413,7 +413,7 @@ const App = () => {
         {/* Email Field */}
         <div className="relative">
           <label htmlFor="email" className="block text-sm font-medium text-sky-700">Email</label>
-          <div className="mt-1 relative">
+          <div className="relative mt-1">
             <input
               type="email"
               id="email"
@@ -421,9 +421,9 @@ const App = () => {
               value={formData.email}
               onChange={handleInputChange}
               required
-              className="w-full p-4 pl-10 rounded-md border-sky-300 shadow-sm focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50 transition-all"
+              className="w-full p-4 pl-10 transition-all rounded-md shadow-sm border-sky-300 focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50"
             />
-            <svg xmlns="http://www.w3.org/2000/svg" className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="absolute w-5 h-5 transform -translate-y-1/2 left-3 top-1/2 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 9l4 4-4 4M21 9l-4 4 4 4" />
             </svg>
           </div>
@@ -439,7 +439,7 @@ const App = () => {
             value={formData.message}
             onChange={handleInputChange}
             required
-            className="mt-1 block w-full p-4 rounded-md border-sky-300 shadow-sm focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50 transition-all"
+            className="block w-full p-4 mt-1 transition-all rounded-md shadow-sm border-sky-300 focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50"
           ></textarea>
         </div>
 
@@ -454,16 +454,16 @@ const App = () => {
       </form>
 
       {/* Social Media Links */}
-      <div className="mt-8 flex justify-center space-x-6">
+      <div className="flex justify-center mt-8 space-x-6">
         <a
           href="https://github.com/dipakkhaire23"
-          className="text-sky-600 hover:text-sky-700 transition-all transform hover:scale-110 duration-300"
+          className="transition-all duration-300 transform text-sky-600 hover:text-sky-700 hover:scale-110"
         >
           <Github className="w-8 h-8" />
         </a>
         <a
           href="https://linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=dipak-khaire-1a4227291"
-          className="text-sky-600 hover:text-sky-700 transition-all transform hover:scale-110 duration-300"
+          className="transition-all duration-300 transform text-sky-600 hover:text-sky-700 hover:scale-110"
         >
           <Linkedin className="w-8 h-8" />
         </a>
