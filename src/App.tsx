@@ -32,7 +32,7 @@ const App = () => {
     name: "Dipak Khaire",
     title: "APP && JAVA FULLSTACK DEVLOPER",
     about: "I Am Dipak, a passionate and skilled developer with expertise in Flutter for mobile and web development, along with Spring Boot for backend services. With strong problem-solving abilities, I have successfully built and deployed various projects on GitHub and Vercel. Check out my projects!",
-    photo: "/assets/dk.jpg",
+    photo: "/assets/myphoto.jpg",
     resumeUrl: "/assets/m_resume.pdf", // Add your resume URL here
     email: "dipak.22310640@viit.ac.in",
     collegeName: "Student At VIIT,Pune",
@@ -165,9 +165,11 @@ const App = () => {
     
   return (
     <div className="min-h-screen bg-gradient-to-b from-sky-50 to-white">
-      <div className="py-4 text-white bg-gradient-to-r from-blue-400 via-blue-600 to-white">
+      <div className="py-4 text-white bg-gradient-to-r from-blue-400 via-blue-600 to-white" style={{
+       borderRadius: '30px'
+      }}>
         <div className="container flex items-center justify-between px-4 mx-auto">
-          <h1 className="text-xl font-semibold text-center md:text-2xl md:text-left">{portfolioData.collegeName}</h1>
+          <h1 className="text-xl font-semibold text-center md:text-2xl md:text-left" >{portfolioData.collegeName}</h1>
           <div className="flex gap-10 ml-auto">
             <a href="#home" className="text-lg font-semibold text-black transition-all md:text-xl hover:text-gray-700">Home</a>
             <a href="#projects" className="text-lg font-semibold text-black transition-all md:text-xl hover:text-gray-700">Projects</a>
@@ -177,36 +179,57 @@ const App = () => {
       </div>
 
       {/* Home Section */}
-      <div id="home" className="text-white bg-gradient-to-b from-blue-300 to-transparent">
-        <div className="container px-4 py-10 mx-auto">
-          <div className="flex flex-col items-center justify-between gap-12 md:flex-row">
-            <div className="flex-1 animate-fade-in-up">
-              <div className="flex items-center gap-20">
-                <h1 className="mb-2 text-3xl font-semibold text-blue-500 md:text-4xl animate-slide-in-left">
-                  {portfolioData.name}
-                </h1>
-                <a href={`mailto:${portfolioData.email}`} className="inline-flex items-center px-6 py-3 font-semibold transition-all bg-transparent border-2 border-white rounded-lg hover:bg-white hover:text-green-600 hover:scale-105">
-                  <Mail className="w-5 h-5 mr-2" /> Hire Me
-                </a>
-              </div>
-              <h2 className="mb-6 text-xl font-bold text-green-600 md:text-2xl animate-slide-in-left animation-delay-200">{portfolioData.title}</h2>
-              <p className="mb-8 text-lg font-bold text-gray-600 animate-slide-in-left animation-delay-400">{portfolioData.about}</p>
-              <div className="flex gap-4 animate-slide-in-left animation-delay-600">
-                <a href={ import.meta.env.BASE_URL + portfolioData.resumeUrl} 
-                download 
-                className="inline-flex items-center px-6 py-3 font-semibold text-green-600 transition-all bg-white rounded-lg hover:bg-green-50 hover:scale-105">
-                  <Download className="w-5 h-5 mr-2" /> Download Resume
-                </a>
-              </div>
-            </div>
-            <div className="flex-shrink-0 animate-fade-in">
-              <img src={  import.meta.env.BASE_URL + portfolioData.photo} alt={portfolioData.name} className="object-cover w-48 transition-transform duration-300 rounded-lg shadow-lg h-80 hover:scale-105" />
-            </div>
-          </div>
+      <div id="home" className="text-white bg-black" style={{
+        borderTopLeftRadius: '50px',
+        borderTopRightRadius: '50px',
+      }}>
+  <div className="container px-4 py-10 mx-auto">
+    <div className="flex flex-col items-center justify-between gap-12 md:flex-row">
+      <div className="flex-1 animate-fade-in-up">
+        <div className="flex items-center gap-20">
+          <h1 className="mb-2 text-3xl font-semibold text-white md:text-4xl animate-slide-in-left">
+            {portfolioData.name}
+          </h1>
+          <a
+            href={`mailto:${portfolioData.email}`}
+            className="inline-flex items-center px-6 py-3 font-semibold transition-all bg-transparent border-2 border-white rounded-lg hover:bg-white hover:text-teal-600 hover:scale-105"
+          >
+            <Mail className="w-5 h-5 mr-2" /> Hire Me
+          </a>
+        </div>
+      <h2 className="mb-6 text-xl font-bold text-teal-300 md:text-2xl animate-slide-in-left animation-delay-200" >
+    
+          {portfolioData.title}
+        </h2>
+        <p className="mb-8 text-lg font-semibold text-gray-200 animate-slide-in-left animation-delay-400">
+          {portfolioData.about}
+        </p>
+        <div className="flex gap-4 animate-slide-in-left animation-delay-600">
+          <a
+            href={import.meta.env.BASE_URL + portfolioData.resumeUrl}
+            download
+            className="inline-flex items-center px-6 py-3 font-semibold text-teal-600 transition-all bg-white rounded-lg hover:bg-teal-50 hover:scale-105"
+          >
+            <Download className="w-5 h-5 mr-2" /> Download Resume
+          </a>
         </div>
       </div>
+      <div className="flex-shrink-0 animate-fade-in">
+        <img
+          src={import.meta.env.BASE_URL + portfolioData.photo}
+          alt={portfolioData.name}
+          className="object-cover w-48 h-48 transition-transform duration-300 rounded-full shadow-lg hover:scale-105"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      
+      
       {/* activit */}
-      <div id="activities" className="text-white bg-gradient-to-b from-green-300 to-transparent">
+      <div id="activities" className="text-white bg-black" >
   <div className="container px-4 py-10 mx-auto">
     <h2 className="mb-6 text-3xl font-semibold text-green-500 md:text-4xl animate-slide-in-left">
       Activities & Interests
@@ -249,7 +272,7 @@ const App = () => {
 
 
       {/* Education Section */}
-      <div id="education" className="py-10 text-blue-600 bg-white">
+      <div id="education" className="text-white bg-black">
         <div className="container px-4 mx-auto">
           <h2 className="mb-8 text-2xl font-bold text-left text-blue-800 md:text-3xl animate-slide-in-left">Education</h2>
           <div className="space-y-8">
@@ -283,7 +306,7 @@ const App = () => {
       </div>
 
       {/* Projects Section */}
-      <div id="projects" className="py-20 text-white bg-gradient-to-b from-blue-500 to-transparent">
+      <div id="projects" className="text-white bg-black">
         <div className="container px-4 mx-auto">
           <h2 className="mb-6 text-3xl font-semibold md:text-4xl text-black-500 animate-slide-in-left">
             Projects
@@ -303,7 +326,7 @@ const App = () => {
       </div>
 
 {/* Achievements Section */}
-<div id="achievements" className="py-20 text-white bg-gradient-to-b from-blue-600 to-transparent">
+<div id="achievements" className="text-white bg-black">
   <div className="container px-4 mx-auto">
     <h2 className="mb-6 text-3xl font-semibold text-white md:text-4xl animate-slide-in-left">
       Achievements
@@ -346,7 +369,7 @@ const App = () => {
 
 
       {/* Experience Section */}
-      <div id="experience" className="py-10 text-blue-600 bg-white">
+      <div id="experience" className="text-white bg-black">
         <div className="container px-4 mx-auto">
           <h2 className="mb-8 text-2xl font-bold text-left text-blue-800 md:text-3xl animate-slide-in-left">Experience</h2>
           <div className="space-y-8">
@@ -367,9 +390,13 @@ const App = () => {
         </div>
       </div>
 {/* Contact Section */}
-<div id="contact" className="py-20 bg-gradient-to-b from-sky-50 to-sky-100">
-  <div className="container px-4 mx-auto">
-    <h2 className="mb-12 text-3xl font-bold text-center transition-all duration-500 text-sky-900 animate-fade-in hover:text-sky-700">
+<div id="contact" className="text-white bg-black"  style={{
+    borderBottomLeftRadius: '50px',
+    borderBottomRightRadius: '50px',
+  }}>
+  <div className="container px-4 mx-auto"  >
+  
+<h2 className="mb-12 text-3xl font-bold text-center transition-all duration-500 text-sky-900 animate-fade-in hover:text-sky-700">
       Get In Touch With Me
     </h2>
     
@@ -471,12 +498,7 @@ const App = () => {
     </div>
   </div>
 </div>
-
-
-
-
-
-    </div>
+</div>
   );
 }
 
