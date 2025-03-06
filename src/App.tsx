@@ -14,7 +14,7 @@ const App = () => {
         title: "Nirman Hackathon Top-6",
         description: "Conducted By I2IC Training And Placement Cell VIIT",
         date: "On 30 to 31 Jan 2025",
-        icon: "TrophyIcon",  // Replace with your icon (Trophy 
+        icon: "TrophyIcon",  // Replace with your icon
         images: [
           "/assets/k.jpg",
           "/assets/n.jpg",
