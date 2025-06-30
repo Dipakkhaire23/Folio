@@ -5,8 +5,9 @@ import axios from 'axios';
 import.meta.env.BASE_URL
 
 const App = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [submitStatus, setSubmitStatus] = useState('idle');
+ const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+const [submitStatus, setSubmitStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
 
   const portfolioData = {
     achievements: [
@@ -119,19 +120,17 @@ const App = () => {
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
+  const { name, value } = e.target;
+  setFormData(prev => ({ ...prev, [name]: value }));
+};
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitStatus('loading');
     
     try {
-      const response = await axios.post('https://backend-nw3j.vercel.app/api/contact', formData, {
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/contact`, formData, {
         headers: {
           'Content-Type': 'application/json',
         },
@@ -389,115 +388,116 @@ const App = () => {
           </div>
         </div>
       </div>
-{/* Contact Section */}
-<div id="contact" className="text-white bg-black"  style={{
-    borderBottomLeftRadius: '50px',
-    borderBottomRightRadius: '50px',
-  }}>
-  <div className="container px-4 mx-auto"  >
-  
-<h2 className="mb-12 text-3xl font-bold text-center transition-all duration-500 text-sky-900 animate-fade-in hover:text-sky-700">
-      Get In Touch With Me
-    </h2>
-    
-    <div className="max-w-3xl p-8 mx-auto transition-transform duration-500 transform bg-white rounded-lg shadow-xl hover:scale-105">
-      <form onSubmit={handleSubmit} className="space-y-8">
-        
-        {/* Success/Error Message */}
-        {submitStatus === 'error' && (
-          <div className="p-4 text-green-800 rounded-md bg-green-50 animate-fade-in">
-            Message sent successfully!
-          </div>
-        )}
-        {submitStatus === 'success' && (
-          // <div className="p-4 text-red-800 rounded-md bg-red-50 animate-fade-in">
-          //   Oops! Something went wrong. Try again.
-          // </div>
-          <div className="p-4 text-green-800 rounded-md bg-green-50 animate-fade-in">
-            Message sent successfully!
-          </div>
-        )}
+  <div id="contact" className="text-white bg-black" style={{
+      borderBottomLeftRadius: '50px',
+      borderBottomRightRadius: '50px',
+    }}>
+      <div className="container px-4 mx-auto">
+        <h2 className="mb-12 text-3xl font-bold text-center transition-all duration-500 text-sky-900 animate-fade-in hover:text-sky-700">
+          Get In Touch With Me
+        </h2>
 
-        {/* Name Field */}
-        <div className="relative">
-          <label htmlFor="name" className="block text-sm font-medium text-sky-700">Name</label>
-          <div className="relative mt-1">
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleInputChange}
-              required
-              className="w-full p-4 pl-10 transition-all rounded-md shadow-sm border-sky-300 focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50"
-            />
-            <svg xmlns="http://www.w3.org/2000/svg" className="absolute w-5 h-5 transform -translate-y-1/2 left-3 top-1/2 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 3l-7 7-7-7" />
-            </svg>
+        <div className="max-w-3xl p-8 mx-auto transition-transform duration-500 transform bg-white rounded-lg shadow-xl hover:scale-105">
+          <form onSubmit={handleSubmit} className="space-y-8">
+
+            {/* Feedback */}
+            {submitStatus === 'success' && (
+              <div className="p-4 text-green-800 rounded-md bg-green-50 animate-fade-in">
+                Message sent successfully!
+              </div>
+            )}
+            {submitStatus === 'error' && (
+              <div className="p-4 text-red-800 rounded-md bg-red-50 animate-fade-in">
+                Oops! Something went wrong. Try again.
+              </div>
+            )}
+
+            {/* Name Field */}
+            <div className="relative">
+              <label htmlFor="name" className="block text-sm font-medium text-sky-700">Name</label>
+              <div className="relative mt-1">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
+                  className="block w-full p-4 mt-1 text-black rounded-md shadow-sm border-sky-300 focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50"
+                />
+              </div>
+            </div>
+
+            {/* Email Field */}
+            <div className="relative">
+              <label htmlFor="email" className="block text-sm font-medium text-sky-700">Email</label>
+              <div className="relative mt-1">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                  className="block w-full p-4 mt-1 text-black rounded-md shadow-sm border-sky-300 focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50"
+                />
+              </div>
+            </div>
+
+            {/* Message Field */}
+            <div className="relative">
+              <label htmlFor="message" className="block text-sm font-medium text-sky-700">Message</label>
+              <textarea
+  id="message"
+  name="message"
+  rows={4}
+  value={formData.message}
+  onChange={handleInputChange}
+  required
+  className="block w-full p-4 mt-1 text-black rounded-md shadow-sm border-sky-300 focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50"
+/>
+
+            </div>
+
+            {/* Submit Button */}
+            <button
+              type="submit"
+              disabled={submitStatus === 'loading'}
+              className={`w-full bg-sky-600 text-white py-3 px-6 rounded-lg font-semibold transition-all hover:bg-sky-700 hover:scale-[1.05] ${submitStatus === 'loading' ? 'opacity-75 cursor-not-allowed' : 'hover:shadow-lg'}`}
+            >
+              {submitStatus === 'loading' ? 'Sending...' : 'Send Message'}
+            </button>
+          </form>
+
+          {/* Social Links */}
+          <div className="flex justify-center mt-8 space-x-6">
+            <a
+              href="https://github.com/dipakkhaire23"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-transform transform text-sky-600 hover:text-sky-700 hover:scale-110"
+            >
+              <Github className="w-8 h-8" />
+            </a>
+            <a
+              href="https://linkedin.com/in/dipak-khaire-1a4227291"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-transform transform text-sky-600 hover:text-sky-700 hover:scale-110"
+            >
+              <Linkedin className="w-8 h-8" />
+            </a>
           </div>
         </div>
-
-        {/* Email Field */}
-        <div className="relative">
-          <label htmlFor="email" className="block text-sm font-medium text-sky-700">Email</label>
-          <div className="relative mt-1">
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-              required
-              className="w-full p-4 pl-10 transition-all rounded-md shadow-sm border-sky-300 focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50"
-            />
-            <svg xmlns="http://www.w3.org/2000/svg" className="absolute w-5 h-5 transform -translate-y-1/2 left-3 top-1/2 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 9l4 4-4 4M21 9l-4 4 4 4" />
-            </svg>
-          </div>
-        </div>
-
-        {/* Message Field */}
-        <div className="relative">
-          <label htmlFor="message" className="block text-sm font-medium text-sky-700">Message</label>
-          <textarea
-            id="message"
-            name="message"
-            rows={4}
-            value={formData.message}
-            onChange={handleInputChange}
-            required
-            className="block w-full p-4 mt-1 transition-all rounded-md shadow-sm border-sky-300 focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50"
-          ></textarea>
-        </div>
-
-        {/* Submit Button */}
-        <button
-          type="submit"
-          disabled={submitStatus === 'loading'}
-          className={`w-full bg-sky-600 text-white py-3 px-6 rounded-lg font-semibold transition-all hover:bg-sky-700 hover:scale-[1.05] ${submitStatus === 'loading' ? 'opacity-75 cursor-not-allowed' : 'hover:shadow-lg'}`}
-        >
-          {submitStatus === 'loading' ? 'Sending...' : 'Send Message'}
-        </button>
-      </form>
-
-      {/* Social Media Links */}
-      <div className="flex justify-center mt-8 space-x-6">
-        <a
-          href="https://github.com/dipakkhaire23"
-          className="transition-all duration-300 transform text-sky-600 hover:text-sky-700 hover:scale-110"
-        >
-          <Github className="w-8 h-8" />
-        </a>
-        <a
-          href="https://linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=dipak-khaire-1a4227291"
-          className="transition-all duration-300 transform text-sky-600 hover:text-sky-700 hover:scale-110"
-        >
-          <Linkedin className="w-8 h-8" />
-        </a>
       </div>
     </div>
-  </div>
-</div>
+
+
+
+
+
+
+
 </div>
   );
 }
